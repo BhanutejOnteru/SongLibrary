@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="501.0" maxWidth="650.0" prefHeight="501.0" prefWidth="650.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
+   <children>
+      <Button fx:id="delete" layoutX="106.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleDelete" prefHeight="38.0" prefWidth="183.0" text="Delete" textFill="#1f2120">
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <ListView fx:id="listView" layoutX="27.0" layoutY="76.0" prefHeight="319.0" prefWidth="356.0" />
+      <Label layoutX="103.0" layoutY="29.0" prefHeight="38.0" prefWidth="209.0" text="Onteru's Playlist" textFill="#19df16">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <GridPane fx:id="gridpane" layoutX="391.0" layoutY="75.0" prefHeight="290.0" prefWidth="234.0" style="-fx-background-color: black;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="titleIF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="artistIF" layoutX="114.0" layoutY="55.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="albumIF" layoutX="114.0" layoutY="92.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="yearIF" layoutX="114.0" layoutY="130.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="106.0" text="Title" textFill="#faf1f1" GridPane.rowIndex="1" />
+            <Label fx:id="artistLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="104.0" text="Artist" textFill="#f8f2f2" GridPane.rowIndex="2" />
+            <Label fx:id="albumLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="106.0" text="Album" textFill="#fffcfc" GridPane.rowIndex="3" />
+            <Label fx:id="yearLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="107.0" text="Year" textFill="#fdf6f6" GridPane.rowIndex="4" />
+            <Button fx:id="edit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleEdit" prefHeight="31.0" prefWidth="92.0" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Bloom />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+         </children>
+      </GridPane>
+      <Button fx:id="add" alignment="CENTER" contentDisplay="CENTER" layoutX="508.0" layoutY="365.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="31.0" prefWidth="92.0" text="Add">
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Bloom />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
